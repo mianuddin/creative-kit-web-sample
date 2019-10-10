@@ -4,51 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Material+Icons&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&display=swap" rel="stylesheet">
   <link href="stylesheet.css" rel="stylesheet">
   <title>Scrapbook</title>
 </head>
 <body>
-  <div id="app" class="app">
-      <div class="detail" v-if="contents[selected]">
-        <h1 class="title">{{ firstName }}'s Scrapbook</h1>
-        <h2 class="scrap-title">{{ selected }}</h2>
-        <a class="nav__grid" href=".">
-          <i class="material-icons">
-            dashboard
-          </i>
-        </a>
+  <div id="app" v-bind:class="contents[selected] ? 'detail' : 'grid'">
+    <h1 class="title">
+      <a class="title__link" href=".">
+        {{ firstName }}'s Scrapbook
+      </a>
+    </h1>
+    <h2
+      v-if="contents[selected]"
+      class="scrap-title"
+    >
+      {{ selected }}
+    </h2>
+    <div class="snapchat-creative-kit-share share-button"></div>
+    <template v-if="contents[selected]">
+      <img
+        class="image"
+        data-tilt
+        data-tilt-full-page-listening
+        data-tilt-max="5"
+        v-bind:src="contents[selected]['src']"
+      />
+      <p v-if="contents[selected]['note']" class="note">{{ contents[selected]['note'] }}</p>
+    </template>
+    <div class="grid__items" v-else>
+      <a
+        v-for="(scrap, name) in contents"
+        class="grid__item"
+        data-tilt
+        data-tilt-max="5"
+        v-bind:href="'?item=' + name"
+      >
         <img
-          class="image"
-          data-tilt
-          data-tilt-full-page-listening
-          data-tilt-max="5"
-          v-bind:src="contents[selected]['src']"
-        />
-        <p class="note" v-if="contents[selected]['note']">{{ contents[selected]['note'] }}</p>
-      </div>
-    <div class="grid" v-else>
-        <h1 class="title">{{ firstName }}'s Scrapbook</h1>
-        <div class="grid__items">
-          <a
-            v-for="(scrap, name) in contents"
-            class="grid__item"
-            data-tilt
-            data-tilt-max="5"
-            v-bind:href="'?item=' + name"
-          >
-            <img
-              class="grid__image"
-              v-bind:src="scrap['src']"
-            >
-          </a>
-        </div>
+          class="grid__image"
+          v-bind:src="scrap['src']"
+        >
+      </a>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-yaml/dist/js-yaml.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt/dist/vanilla-tilt.min.js"></script>
+  <script>
+    // Load the SDK asynchronously
+    (function (d, s, id) {
+    var js, sjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://sdk.snapkit.com/js/v1/create.js";
+    sjs.parentNode.insertBefore(js, sjs);
+    }(document, 'script', 'snapkit-creative-kit-sdk'));
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
