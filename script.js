@@ -12,9 +12,7 @@ new Vue({
     selected: 'Hello Vue.js!'
   },
   created: function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    this.selected = urlParams.get('item');
-
+    this.selected = decodeURI(window.location.hash).replace('#', '');
     fetch('./contents.yaml')
       .then(response => response.text())
       .then(data => this.contents = jsyaml.safeLoad(data));
