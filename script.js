@@ -13,7 +13,6 @@ new Vue({
   },
   methods: {
     handleNavigate: function (name) {
-      this.selected = name;
       window.location.hash=`#${name}`;
       location.reload(); // Refresh page to update share url
     }

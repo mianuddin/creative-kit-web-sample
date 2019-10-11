@@ -15,7 +15,7 @@
 <body>
   <div id="app">
     <header class="header">
-        <h1 class="title" v-bind:class="contents[selected] ? '' : 'title--grid'">
+        <h1 class="title" v-bind:class="contents[selected] ? '' : 'title--grid'" v-cloak>
           <a
             class="title__link"
             v-on:click="handleNavigate('')"
@@ -25,6 +25,7 @@
         </h1>
         <h2
           v-if="contents[selected]"
+          v-cloak
           class="scrap-title"
         >
           {{ selected }}
