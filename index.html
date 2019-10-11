@@ -13,48 +13,50 @@
   <link href="stylesheet.css" rel="stylesheet">
 </head>
 <body>
-  <div id="app" v-bind:class="contents[selected] ? 'detail' : 'grid'">
-    <h1 class="title">
-      <a
-        class="title__link"
-        href="#"
-        v-on:click="selected = ''"
-      >
-        {{ firstName }}'s Scrapbook
-      </a>
-    </h1>
-    <h2
-      v-if="contents[selected]"
-      class="scrap-title"
-    >
-      {{ selected }}
-    </h2>
-    <div class="snapchat-creative-kit-share share-button"></div>
-    <template v-if="contents[selected]">
-      <img
-        class="image"
-        data-tilt
-        data-tilt-full-page-listening
-        data-tilt-max="5"
-        v-bind:src="contents[selected]['src']"
-      />
-      <p v-if="contents[selected]['note']" class="note">{{ contents[selected]['note'] }}</p>
-    </template>
-    <div class="grid__items" v-else>
-      <a
-        v-for="(scrap, name) in contents"
-        class="grid__item"
-        data-tilt
-        data-tilt-max="5"
-        v-bind:href="'#' + name"
-        v-on:click="selected = name"
-      >
-        <img
-          class="grid__image"
-          v-bind:src="scrap['src']"
+  <div id="app">
+    <header class="header">
+        <h1 class="title" v-bind:class="contents[selected] ? '' : 'title--grid'">
+          <a
+            class="title__link"
+            v-on:click="handleNavigate('')"
+          >
+            {{ firstName }}'s Scrapbook
+          </a>
+        </h1>
+        <h2
+          v-if="contents[selected]"
+          class="scrap-title"
         >
-      </a>
-    </div>
+          {{ selected }}
+        </h2>
+        <div class="snapchat-creative-kit-share share-button"></div>
+    </header>
+    <main v-bind:class="contents[selected] ? 'detail' : 'grid'">
+      <template v-if="contents[selected]">
+        <img
+          class="image"
+          data-tilt
+          data-tilt-full-page-listening
+          data-tilt-max="5"
+          v-bind:src="contents[selected]['src']"
+        />
+        <p v-if="contents[selected]['note']" class="note">{{ contents[selected]['note'] }}</p>
+      </template>
+      <div class="grid__items" v-else>
+        <a
+          v-for="(scrap, name) in contents"
+          class="grid__item"
+          data-tilt
+          data-tilt-max="5"
+          v-on:click="handleNavigate(name)"
+        >
+          <img
+            class="grid__image"
+            v-bind:src="scrap['src']"
+          >
+        </a>
+      </div>
+    </main>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
