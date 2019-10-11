@@ -1,13 +1,15 @@
-
-"random photo":
-  note: "This is a random photo from Unsplash ✨"
-  src: "https://source.unsplash.com/random/"
 succulents:
   note: "A bunch of beautiful plants at a small shop in Cagayan de Oro, 🇵🇭"
   src: "images/succulents.jpg"
 "new york city":
-  note: "Just some windows that I saw in the city."
+  note: "Some windows that I saw in the city!"
   src: "images/windows.jpg"
+coffee:
+  note: "You can never go wrong with an iced hazelnut coffee 😋"
+  src: "images/nathan-dumlao-tZ9-0iAmmX0-unsplash.jpg"
+"random photo":
+  note: "This is a random photo from Unsplash ✨"
+  src: "https://source.unsplash.com/random/"
 t-shirts:
   note: "Some of our shirts from our second year. SLO Hacks collected and donated over 150 t-shirts to Goodwill."
   src: "images/slo-hacks-shirts.jpg"
