@@ -9,8 +9,8 @@ try {
   console.log("📖    Create (Scrapbook) Entries v1.0.0\n");
 
   console.log("🔍    Reading templates...");
-  const gridTemplate = yaml.safeLoad(fs.readFileSync(path.join(__dirname, 'grid_template.mustache'), 'utf8'));
-  const entryTemplate = yaml.safeLoad(fs.readFileSync(path.join(__dirname, 'entry_template.mustache'), 'utf8'));
+  const gridTemplate = yaml.safeLoad(fs.readFileSync(path.join(__dirname, 'templates/grid-template.html'), 'utf8'));
+  const entryTemplate = yaml.safeLoad(fs.readFileSync(path.join(__dirname, 'templates/entry-template.html'), 'utf8'));
 
   console.log("👀    Reading contents...");
   const contents = yaml.safeLoad(fs.readFileSync(path.join(__dirname, 'contents.yaml'), 'utf8'));
