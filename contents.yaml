@@ -1,10 +1,15 @@
 firstName: Mian # Write your first name here
-entries: # Scrapbook entries under here (2-space indent)
+entries: # Scrapbook entries under here (2-space indent)\
   - title: succulents 
     note: A bunch of beautiful plants at a small shop in Cagayan de Oro, 🇵🇭 # Optional: specify a note
-    src: images/succulents.jpg
-    sticker: # Optional: specify a sticker url
-      - stickerUrl: https://mianuddin.github.io/creative-kit-web-sample/images/succulents.jpg
+    src: images/succulents.png
+    sticker: # Optional: specify a public sticker url
+      - stickerUrl: https://mianuddin.github.io/creative-kit-web-sample/images/succulents.png
+  - title: cat 
+    note: I have a cute cat that looks just like this one!
+    src: images/cool-cat-sticker-creation.png
+    sticker:
+      - stickerUrl: https://mianuddin.github.io/creative-kit-web-sample/images/cool-cat-sticker-creation.png
   - title: new york city
     note: Some windows that I saw in the city!
     src: images/windows.jpg
