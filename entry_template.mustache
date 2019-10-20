@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta property="og:site_name" content="{{firstName}}'s Scrapbook">
   <meta property="og:title" content="{{title}}">
+  {{#sticker}}
+  <meta property="snapchat:sticker" content="{{{stickerUrl}}}"/>
+  {{/sticker}}
   <title>{{title}} | {{firstName}}'s Scrapbook</title>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&display=swap" rel="stylesheet">
   <link href="stylesheet.css" rel="stylesheet">
