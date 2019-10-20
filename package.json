@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "js-yaml": "^3.13.1",
+    "mustache": "^3.1.0",
+    "shortid": "^2.2.15"
+  }
+}
