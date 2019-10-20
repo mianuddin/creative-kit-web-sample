@@ -1,0 +1,145 @@
+body {
+  background: linear-gradient(135deg, #EBDECA 40%, #FFFFFF 50%);
+  color: #333333;
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.header {
+  display: grid;
+  grid-template-areas:  '. t .';
+  grid-template-columns: 4vw 1fr 4vw;
+  grid-template-rows: 1fr;
+  height: 20vh;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas: '. g .'
+                       '. . .';
+  grid-template-columns: 4vw 1fr 4vw;
+  grid-template-rows: 1fr 12.5vh;
+  width: 100%;
+}
+
+.title {
+  align-self: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1em;
+  grid-area: t;
+  text-transform: uppercase;
+}
+
+.title.title--grid {
+  justify-self: center;
+}
+
+.title__link {
+  color: #333333;
+  text-decoration: none;
+}
+
+.title__link:hover {
+  color: #1DE9B6;
+  cursor: pointer;
+}
+
+.grid__items {
+  grid-area: g;
+  width: 100%;
+  column-count: 3;
+  column-gap: 1em;
+}
+
+.grid__item {
+  width: 100%;
+  display: inline-block;
+  margin: 0.5em auto;
+}
+
+.grid__item:hover {
+  cursor: pointer;
+}
+
+.grid__image {
+  width: 100%;
+  display: inline-block;
+}
+
+.detail {
+  display: grid;
+  grid-template-areas: '. i . n .'
+                       '. . . . .';
+  grid-template-columns: 4vw 50vw 4vw 1fr 4vw;
+  grid-template-rows: 1fr 12.5vh;
+  height: 80vh;
+  width: 100vw;
+}
+
+.scrap-title {
+  align-self: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  grid-area: t;
+  justify-self: center;
+  text-transform: capitalize;
+}
+
+.image {
+  align-self: center;
+  box-shadow: 0px 0px 48px -16px rgba(0,0,0,0.75);
+  grid-area: i;
+  justify-self: center;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.note {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  grid-area: n;
+  margin: 0;
+}
+
+.share-button {
+  grid-area: t;
+  align-self: center;
+  justify-self: end;
+}
+
+@media (max-width: 576px) {
+  .title {
+    align-self: flex-start;
+    justify-self: center;
+  }
+
+  .share-button {
+    align-self: flex-end;
+    justify-self: center;
+  }
+
+  .share-button.share-button--grid {
+    align-self: center;
+  }
+
+  .detail {
+    grid-template-areas: '. . .'
+                         '. i .'
+                         '. . .'
+                         '. n .'
+                         '. . .';
+    grid-template-columns: 4vw 1fr 4vw;
+    grid-template-rows: 0.5fr 50vh 0.5fr 1fr 0.5fr;
+    width: 100vw;
+  }
+
+  .grid__items {
+    column-count: 1;
+  }
+}
