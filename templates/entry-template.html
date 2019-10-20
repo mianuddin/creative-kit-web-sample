@@ -4,11 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta property="og:site_name" content="{{firstName}}'s Scrapbook">
-  <meta property="og:title" content="{{title}}">
-  {{#sticker}}
-  <meta property="snapchat:sticker" content="{{{stickerUrl}}}"/>
-  {{/sticker}}
   <title>{{title}} | {{firstName}}'s Scrapbook</title>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&display=swap" rel="stylesheet">
   <link href="stylesheet.css" rel="stylesheet">
@@ -21,7 +16,7 @@
       <h2 class="scrap-title">
         {{title}}
       </h2>
-      <div class="snapchat-creative-kit-share share-button"></div>
+      <!--  Place your Creative Kit for Web share button here -->
     </header>
     <main class="detail">
       <img
@@ -37,15 +32,5 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-yaml/dist/js-yaml.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt/dist/vanilla-tilt.min.js"></script>
-  <script>
-    /* Load the SDK asynchronously */
-    (function (d, s, id) {
-    var js, sjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://sdk.snapkit.com/js/v1/create.js";
-    sjs.parentNode.insertBefore(js, sjs);
-    }(document, 'script', 'snapkit-creative-kit-sdk'));
-  </script>
 </body>
 </html>
